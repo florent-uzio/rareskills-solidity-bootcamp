@@ -1,4 +1,4 @@
-1. How does ERC721A save gas?
+## How does ERC721A save gas?
 
 ERC721A is a proposed standard for non-fungible tokens (NFTs) on the Ethereum blockchain. The "A" in ERC721A stands for "atomic," indicating that it aims to reduce the number of transactions needed for certain operations, thereby potentially saving gas.
 
@@ -8,7 +8,7 @@ Additionally, ERC721A aims to optimize other operations such as token approval a
 
 Overall, by optimizing and combining certain operations into atomic transactions, ERC721A seeks to improve the efficiency and reduce the gas costs associated with managing non-fungible tokens on the Ethereum blockchain.
 
-2. Where does it add cost?
+## Where does it add cost?
 
 Implementation Complexity: Implementing ERC721A requires additional logic to handle batch operations and ensure atomicity. This added complexity might require more development time and resources, which could indirectly translate into higher costs.
 
