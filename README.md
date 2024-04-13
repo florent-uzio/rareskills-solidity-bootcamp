@@ -1,1 +1,1 @@
-# rareskills-solidity-bootcamp
+# Rareskills Solidity Bootcamp
