@@ -2,10 +2,10 @@
 pragma solidity ^0.8.24;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/token/common/ERC2981.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Royalty.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Week2Nft is ERC721, ERC2981, Ownable {
+contract Week2Nft is ERC721Royalty, Ownable {
     uint16 public constant MAX_MINT = 1000;
     uint256 private _nextTokenId;
 
@@ -21,7 +21,7 @@ contract Week2Nft is ERC721, ERC2981, Ownable {
 
     function supportsInterface(
         bytes4 interfaceId
-    ) public view virtual override(ERC721, ERC2981) returns (bool) {
+    ) public view virtual override(ERC721Royalty) returns (bool) {
         return super.supportsInterface(interfaceId);
     }
 }
