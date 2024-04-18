@@ -13,6 +13,7 @@ const addresses = [
   "0xb5Fe7c3D0fB1AF677845236F500F2fef769c308A",
   "0x9f0A3F85bCCb8C679308Dff711F29EBebfeE9d04",
   "0x967Ab4550727E9993DF856EE20368f10Ab0fF6f8",
+  "0x7A2F9F87cc9AC2339081D2D3BbcB1f3e8F043Bd9",
 ];
 
 // Convert buffer to hexadecimal
@@ -51,4 +52,4 @@ const leaves = generateLeavesFromAddresses(addresses);
 
 const tree = new MerkleTree(leaves, keccak256, { sortPairs: true });
 generateRoot(tree);
-generateProofFromAddress(addresses[0]);
+generateProofFromAddress(addresses[addresses.length - 1]);

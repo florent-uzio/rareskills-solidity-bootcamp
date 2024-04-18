@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import {MerkleProof} from "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import {BitMaps} from "@openzeppelin/contracts/utils/structs/BitMaps.sol";
 
-contract Week2Nft is ERC721Royalty, Ownable {
+contract FloNft is ERC721Royalty, Ownable {
     // bytes32 = [byte, byte, ..., byte] <- 32 bytes
     bytes32 public immutable merkleRoot;
     BitMaps.BitMap private _addressesList;
@@ -18,7 +18,7 @@ contract Week2Nft is ERC721Royalty, Ownable {
     constructor(
         address initialOwner,
         bytes32 _merkleRoot
-    ) ERC721("Week2Nft", "W2N") Ownable(initialOwner) {
+    ) ERC721("FloNft", "FLO") Ownable(initialOwner) {
         merkleRoot = _merkleRoot;
         // 2.5% royalty for all NFTs sent to the initialOwner
         super._setDefaultRoyalty(initialOwner, 2500);
