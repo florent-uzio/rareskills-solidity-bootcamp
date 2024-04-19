@@ -44,14 +44,17 @@ contract FloStaking is IERC721Receiver {
         bytes calldata data
     ) external override returns (bytes4) {
         // Check only NFT token address can call this contract
-        // require(msg.sender == address(nftToken), "Wrong NFT");
-        require(from == address(0x0), "Cannot send nfts to Vault directly");
-        require(nftToken.ownerOf(tokenId) == msg.sender, "not your token");
+        require(msg.sender == address(nftToken), "Wrong NFT");
+        // This doesn't work
+        // require(from == address(0x0), "Cannot send nfts to Vault directly");
+
+        // This doesn't work as msg.sender is the NFT contract address and not the wallet owning the NFT
+        // require(nftToken.ownerOf(tokenId) == msg.sender, "not your token");
         require(stakes[tokenId].tokenId == 0, "already staked");
 
         stakes[tokenId] = Stake({
             tokenId: tokenId,
-            originalOwner: from,
+            originalOwner: from, // wrong as this would be the NFT address
             timestamp: block.timestamp
         });
 
